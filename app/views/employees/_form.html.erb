@@ -1,0 +1,21 @@
+<%= simple_form_for(employee) do |f| %>
+<%= f.input :name, label: '氏名 (Nome Completo):' %>
+<%= f.input :furigana %>
+<%= f.input :address %>
+<%= f.input :phone %>
+<%= f.input :email %>
+<%= f.input :factory %>
+<%= f.input :role %>
+<%= f.input :job_exp %>
+<%= f.input :pay_number %>
+<%= f.input :started_date %>
+<%= f.input :licence1, as: :boolean %>
+<%= f.input :healthy_exam %>
+<%= f.input :drive_licence %>
+<%= f.input :drive_licence_date %>
+<%= f.input :document %>
+<%= f.input :document_date %>
+<%= f.input :passport %>
+<%= f.input :passport_date %>
+<%= f.submit employee.persisted? ? 'Editar' : 'Criar', class: 'btn btn-primary w-100' %>
+<% end %>
