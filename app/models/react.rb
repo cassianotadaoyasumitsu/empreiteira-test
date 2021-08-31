@@ -1,0 +1,2 @@
+class React < ApplicationRecord
+end
