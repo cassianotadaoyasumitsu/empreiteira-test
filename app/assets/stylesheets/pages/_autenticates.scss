@@ -1,0 +1,9 @@
+.autenticates_bg { background-image: url(/assets/background_autenticates.jpg); background-repeat: no-repeat; background-attachment: fixed; background-position: top center; background-size: cover; }
+.autenticate_box { height: 90vh; display: flex; flex-direction: row; justify-content: center; align-items: center; }
+.box { width: 300px; background: #000000a6; color: #fff; padding: 20px; border-radius: 10px; }
+.box h4 { text-align: center; font-weight: 700; }
+.form-inputs label { padding-top: 10px; }
+input#user_remember_me { margin-top: 15px; }
+.form-actions { padding: 10px 0px 15px; text-align: center; }
+.btn-red { background: #751200; color: #fff; border-radius: 5px; width: 35%; }
+.btn-red:hover { background: #4c0c00; color: #e0e0e0; }
