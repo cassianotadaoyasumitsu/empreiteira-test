@@ -1,34 +1,21 @@
-<div class="container p-5">
-  <div class="mt-5">
-    <h1 class="text-center"><%= @employee.name %> ( <small><%= @employee.role %></small> ) </h1>
-  </div>
-  <div>
-    <% @employee.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
-    <% end %>
-    <p>Número: <%= @employee.pay_number %></p>
-    <p>Nome Completo: <%= @employee.name %></p>
-    <p>Furigana: <%= @employee.furigana %></p>
-    <p>Endereço: <%= @employee.address %></p>
-    <p>Telefone: <%= @employee.phone %></p>
-    <p>Email: <%= @employee.email %></p>
-    <p>Cargo: <%= @employee.role %></p>
-    <p>Level: <%= @employee.level_employee %></p>
-    <p>Data Inicio: <%= @employee.started_date %></p>
-    <p>Tempo de experiência: <%= @employee.job_exp %></p>
-  </div>
-  <div class="row justify-content-around">
-    <p>Licença 1: <%= @employee.licence1 ? 'Ok' : 'No' %></p>
-    <p>Licença 2: <%= @employee.licence2 ? 'Ok' : 'No' %></p>
-    <p>Licença 3: <%= @employee.licence3 ? 'Ok' : 'No' %></p>
-    <p>Licença 4: <%= @employee.licence4 ? 'Ok' : 'No' %></p>
-  </div>
-  <div>
-    <p>Driver Licence: <%= @employee.licence5 ? 'Ok' : 'No' %> <span>Venc. <%= @employee.drive_licence %></span></p>
-  </div>
-  <div class="row justify-content-around">
-    <p>Passaporte: <%= @employee.passport %> - Venc. <%= @employee.passport_date %></p>
-    <p>Zairyo Card: <%= @employee.document %> <span>Venc. <%= @employee.document_date %></span></p>
-  </div>
+<p><%= @employee.name %></p>
+<p><%= @employee.furigana %></p>
+<p><%= @employee.address %></p>
+<p><%= @employee.phone %></p>
+<p><%= @employee.email %></p>
+<p><%= @employee.factory %></p>
+<p><%= @employee.role %></p>
+<p><%= @employee.job_exp %></p>
+<p><%= @employee.pay_number %></p>
+<p><%= @employee.started_date %></p>
+<p><%= @employee.licence1 %></p>
+<p><%= @employee.healthy_exam %></p>
+<p><%= @employee.drive_licence %></p>
+<p><%= @employee.drive_licence_date %></p>
+<p><%= @employee.document %></p>
+<p><%= @employee.document_date %></p>
+<p><%= @employee.passport %></p>
+<p><%= @employee.passport_date %></p>
+
   <%= link_to 'Voltar', employees_path, class: ' btn btn-primary' %>
-</div>
+
