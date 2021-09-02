@@ -1,25 +1,35 @@
-<div class="container d-flex flex-column mt-5 align-items-center">
-  <div class="row justify-content-center">
-    <%= image_tag "logo.png", alt: "alttext", class: 'p-5 mt-5' %>
-  </div>
+<div class="container">
+  <div class="employee_dashboard">
 
-  <h1 class="mb-3 text-center">Funcionários</h1>
-  <%= link_to 'Voltar', root_path, class: 'btn btn-info mb-3' %>
-  <%= link_to 'Criar Novo Funcionário', new_employee_path, class: 'btn btn-primary w-50 mb-4' %>
-  <ul class="list-group mb-3">
-    <% @employees.order(:name).each do |employee| %>
-    <li class="list-group-item">
-      <div class="row justify-content-between align-items-center">
-        <div>
-          <strong><%= employee.name %></strong>
+    <h4>EMPLOYEES</h4>
+
+    <div class="employee_dashboard_btn">
+      <%= link_to new_employee_path, class: 'employee_dashboard_link' do %>
+        <i class="fas fa-plus-circle"></i> New employee
+      <% end %>
+    </div>
+
+    <ul class="list-group mb-3">
+      <% @employees.order(:name).each do |employee| %>
+      <li class="list-group-item">
+        <div class="row justify-content-between align-items-center">
+          <div>
+            <strong><%= employee.name %></strong>
+          </div>
+          <div>
+            <%= link_to employee_path(employee), class: 'btn btn-primary' do %>
+              <i class="fas fa-eye"></i>
+            <% end %>
+            <%= link_to edit_employee_path(employee), class: 'btn btn-secondary' do %>
+              <i class="fas fa-edit"></i>
+            <% end %>
+            <%= link_to employee_path(employee), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza?' }  do %>
+              <i class="fas fa-trash"></i>
+            <% end %>
+          </div>
         </div>
-        <div>
-          <%= link_to 'Visualizar', employee_path(employee), class: 'btn btn-primary' %>
-          <%= link_to 'Editar', edit_employee_path(employee), class: 'btn btn-secondary' %>
-          <%= link_to 'Deletar', employee_path(employee), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza?' } %>
-        </div>
-      </div>
-    </li>
-    <% end %>
-  </ul>
+      </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
