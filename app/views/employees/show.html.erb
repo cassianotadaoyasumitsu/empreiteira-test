@@ -1,29 +1,60 @@
-<p><%= @employee.name %></p>
-<p><%= @employee.furigana %></p>
-<p><%= @employee.address %></p>
-<p><%= @employee.phone %></p>
-<p><%= @employee.email %></p>
-<p><%= @employee.factory %></p>
-<p><%= @employee.role %></p>
-<p><%= @employee.job_exp %></p>
-<p><%= @employee.pay_number %></p>
-<p><%= @employee.started_date %></p>
-<p><%= @employee.licence1 %></p>
-<p><%= @employee.healthy_exam %></p>
-<p><%= @employee.drive_licence %></p>
-<p><%= @employee.drive_licence_date %></p>
-<p><%= @employee.document %></p>
-<p><%= @employee.document_date %></p>
-<p><%= @employee.passport %></p>
-<p><%= @employee.passport_date %></p>
+<div class="container">
+  <div class="employee_dashboard">
 
-  <%= link_to 'Voltar', employees_path, class: ' btn btn-primary' %>
+    <h4><%= @employee.name %></h4>
 
-  <%= link_to 'Novo Pedido', new_employee_request_path(@employee), class: 'btn btn-primary'  %>
+    <div class="employee_dashboard_btn">
+      <%= link_to employees_path do %>
+        <i class="fas fa-chevron-circle-left"></i> Back
+      <% end %>
+      <%= link_to new_employee_path, class: 'employee_dashboard_link' do %>
+        <i class="fas fa-plus-circle"></i> New employee
+      <% end %>
+    </div>
 
-<% @employee.requests.each do |request| %>
-<%= request.kind_of %>
-<%= request.amount %>
-<%= request.request_date %>
-<%= request.request_reason %>
-<% end -%>
+    <div class="employee_dashboard_border">
+      <label>Name</label>
+      <p><%= @employee.name %></p>
+      <label>Furigana</label>
+      <p><%= @employee.furigana %></p>
+      <label>Adresses</label>
+      <p><%= @employee.address %></p>
+      <label>Phone</label>
+      <p><%= @employee.phone %></p>
+      <label>Email</label>
+      <p><%= @employee.email %></p>
+      <label>Factory</label>
+      <p><%= @employee.factory %></p>
+      <label>Role</label>
+      <p><%= @employee.role %></p>
+      <label>Job exp</label>
+      <p><%= @employee.job_exp %></p>
+      <label>Pay number</label>
+      <p><%= @employee.pay_number %></p>
+      <label>Started date</label>
+      <p><%= @employee.started_date %></p>
+      <label>Licence1</label>
+      <p><%= @employee.licence1 %></p>
+      <label>Healthy exam</label>
+      <p><%= @employee.healthy_exam %></p>
+      <label>Drive licence</label>
+      <p><%= @employee.drive_licence %></p>
+      <label>Drive licence date</label>
+      <p><%= @employee.drive_licence_date %></p>
+      <label>Document</label>
+      <p><%= @employee.document %></p>
+      <label>Document date</label>
+      <p><%= @employee.document_date %></p>
+      <label>Passport</label>
+      <p><%= @employee.passport %></p>
+      <label>Passport date</label>
+      <p><%= @employee.passport_date %></p>
+      <% @employee.requests.each do |request| %>
+        <%= request.kind_of %>
+        <%= request.amount %>
+        <%= request.request_date %>
+        <%= request.request_reason %>
+      <% end -%>
+    </div>
+  </div>
+</div>

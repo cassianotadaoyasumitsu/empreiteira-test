@@ -1,6 +1,17 @@
 <div class="container">
-<h1 class="text-center">Novo Registro</h1>
+    <div class="employee_dashboard">
 
-<%= render 'employees/form', employee: @employee %>
-<%= link_to 'Voltar', employees_path, class: 'btn btn-info mt-2 mb-5' %>
+        <h4>NEW EMPLOYEE</h4>
+
+        <div class="employee_dashboard_btn">
+        <%= link_to employees_path do %>
+            <i class="fas fa-chevron-circle-left"></i> Back
+        <% end %>
+        </div>
+        
+        <div class="employee_dashboard_border">
+            <%= render 'employees/form', employee: @employee %>
+        </div>
+
+    </div>
 </div>
