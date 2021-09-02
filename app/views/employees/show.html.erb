@@ -1,34 +1,60 @@
-<div class="container p-5">
-  <div class="mt-5">
-    <h1 class="text-center"><%= @employee.name %> ( <small><%= @employee.role %></small> ) </h1>
+<div class="container">
+  <div class="employee_dashboard">
+
+    <h4><%= @employee.name %></h4>
+
+    <div class="employee_dashboard_btn">
+      <%= link_to employees_path do %>
+        <i class="fas fa-chevron-circle-left"></i> Back
+      <% end %>
+      <%= link_to new_employee_path, class: 'employee_dashboard_link' do %>
+        <i class="fas fa-plus-circle"></i> New employee
+      <% end %>
+    </div>
+
+    <div class="employee_dashboard_border">
+      <label>Name</label>
+      <p><%= @employee.name %></p>
+      <label>Furigana</label>
+      <p><%= @employee.furigana %></p>
+      <label>Adresses</label>
+      <p><%= @employee.address %></p>
+      <label>Phone</label>
+      <p><%= @employee.phone %></p>
+      <label>Email</label>
+      <p><%= @employee.email %></p>
+      <label>Factory</label>
+      <p><%= @employee.factory %></p>
+      <label>Role</label>
+      <p><%= @employee.role %></p>
+      <label>Job exp</label>
+      <p><%= @employee.job_exp %></p>
+      <label>Pay number</label>
+      <p><%= @employee.pay_number %></p>
+      <label>Started date</label>
+      <p><%= @employee.started_date %></p>
+      <label>Licence1</label>
+      <p><%= @employee.licence1 %></p>
+      <label>Healthy exam</label>
+      <p><%= @employee.healthy_exam %></p>
+      <label>Drive licence</label>
+      <p><%= @employee.drive_licence %></p>
+      <label>Drive licence date</label>
+      <p><%= @employee.drive_licence_date %></p>
+      <label>Document</label>
+      <p><%= @employee.document %></p>
+      <label>Document date</label>
+      <p><%= @employee.document_date %></p>
+      <label>Passport</label>
+      <p><%= @employee.passport %></p>
+      <label>Passport date</label>
+      <p><%= @employee.passport_date %></p>
+      <% @employee.requests.each do |request| %>
+        <%= request.kind_of %>
+        <%= request.amount %>
+        <%= request.request_date %>
+        <%= request.request_reason %>
+      <% end -%>
+    </div>
   </div>
-  <div>
-    <% @employee.photos.each do |photo| %>
-    <%= cl_image_tag photo.key, height: 150, width: 200, crop: :fill %>
-    <% end %>
-    <p>Número: <%= @employee.pay_number %></p>
-    <p>Nome Completo: <%= @employee.name %></p>
-    <p>Furigana: <%= @employee.furigana %></p>
-    <p>Endereço: <%= @employee.address %></p>
-    <p>Telefone: <%= @employee.phone %></p>
-    <p>Email: <%= @employee.email %></p>
-    <p>Cargo: <%= @employee.role %></p>
-    <p>Level: <%= @employee.level_employee %></p>
-    <p>Data Inicio: <%= @employee.started_date %></p>
-    <p>Tempo de experiência: <%= @employee.job_exp %></p>
-  </div>
-  <div class="row justify-content-around">
-    <p>Licença 1: <%= @employee.licence1 ? 'Ok' : 'No' %></p>
-    <p>Licença 2: <%= @employee.licence2 ? 'Ok' : 'No' %></p>
-    <p>Licença 3: <%= @employee.licence3 ? 'Ok' : 'No' %></p>
-    <p>Licença 4: <%= @employee.licence4 ? 'Ok' : 'No' %></p>
-  </div>
-  <div>
-    <p>Driver Licence: <%= @employee.licence5 ? 'Ok' : 'No' %> <span>Venc. <%= @employee.drive_licence %></span></p>
-  </div>
-  <div class="row justify-content-around">
-    <p>Passaporte: <%= @employee.passport %> - Venc. <%= @employee.passport_date %></p>
-    <p>Zairyo Card: <%= @employee.document %> <span>Venc. <%= @employee.document_date %></span></p>
-  </div>
-  <%= link_to 'Voltar', employees_path, class: ' btn btn-primary' %>
 </div>

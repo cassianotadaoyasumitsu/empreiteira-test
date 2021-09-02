@@ -1,14 +1,14 @@
 <div class="container">
   <div class="employee_dashboard">
 
-        <!-- Arrumar aqui-->
-        <h4>Edit Employee</h4>
+        <h4>Edit <%= @employee.name %></h4>
 
         <div class="employee_dashboard_btn">
-            
-            <!-- Arrumar aqui-->
-            <%= link_to new_employee_path, class: 'employee_dashboard_link' do %>
+            <%= link_to employees_path do %>
                 <i class="fas fa-chevron-circle-left"></i> Back
+            <% end %>
+            <%= link_to new_employee_path, class: 'employee_dashboard_link' do %>
+                <i class="fas fa-plus-circle"></i> New employee
             <% end %>
         </div>
 
