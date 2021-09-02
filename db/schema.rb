@@ -43,8 +43,10 @@ ActiveRecord::Schema.define(version: 2021_08_30_105151) do
     t.string "amount"
     t.date "request_date"
     t.text "request_reason"
+    t.bigint "employee_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.index ["employee_id"], name: "index_requests_on_employee_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -59,4 +61,5 @@ ActiveRecord::Schema.define(version: 2021_08_30_105151) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
+  add_foreign_key "requests", "employees"
 end
