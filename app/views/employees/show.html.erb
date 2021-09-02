@@ -19,3 +19,11 @@
 
   <%= link_to 'Voltar', employees_path, class: ' btn btn-primary' %>
 
+  <%= link_to 'Novo Pedido', new_employee_request_path(@employee), class: 'btn btn-primary'  %>
+
+<% @employee.requests.each do |request| %>
+<%= request.kind_of %>
+<%= request.amount %>
+<%= request.request_date %>
+<%= request.request_reason %>
+<% end -%>
