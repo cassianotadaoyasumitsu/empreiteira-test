@@ -1,5 +1,20 @@
-<div class="container d-flex flex-column mt-5 align-items-center">
-<h1 class="mb-5 text-center">Editar Funcionário</h1>
+<div class="container">
+  <div class="employee_dashboard">
 
-<%= render 'employees/form', employee: @employee %>
+        <!-- Arrumar aqui-->
+        <h4>Edit Employee</h4>
+
+        <div class="employee_dashboard_btn">
+            
+            <!-- Arrumar aqui-->
+            <%= link_to new_employee_path, class: 'employee_dashboard_link' do %>
+                <i class="fas fa-chevron-circle-left"></i> Back
+            <% end %>
+        </div>
+
+        <div class="employee_dashboard_border">
+            <%= render 'employees/form', employee: @employee %>
+        </div>
+
+    </div>
 </div>
