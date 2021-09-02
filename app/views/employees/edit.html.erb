@@ -1,12 +1,17 @@
 <div class="container">
   <div class="employee_dashboard">
 
+
         <h4><%= @employee.name %></h4>
 
         <div class="employee_dashboard_btn">
             
             <%= link_to employee_path(@employee), class: 'employee_dashboard_link' do %>
+
                 <i class="fas fa-chevron-circle-left"></i> Back
+            <% end %>
+            <%= link_to new_employee_path, class: 'employee_dashboard_link' do %>
+                <i class="fas fa-plus-circle"></i> New employee
             <% end %>
         </div>
 

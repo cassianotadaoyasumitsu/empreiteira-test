@@ -23,7 +23,7 @@
             <%= link_to edit_employee_path(employee), class: 'btn btn-secondary' do %>
               <i class="fas fa-edit"></i>
             <% end %>
-            <%= link_to employee_path(employee), class: 'btn btn-danger', method: :delete, data: { confirm: 'Tem certeza?' }  do %>
+            <%= link_to employee_path(employee), class: 'btn btn-danger', method: :delete, data: { confirm: 'Are you sure whant to delete?' }  do %>
               <i class="fas fa-trash"></i>
             <% end %>
           </div>
