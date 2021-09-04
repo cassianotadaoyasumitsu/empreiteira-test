@@ -23,6 +23,8 @@ gem 'redis', '~> 4.0'
 # gem 'bcrypt', '~> 3.1.7'
 # Pundit
 gem 'pundit'
+# Admin
+gem 'rails_admin', '~> 2.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 
